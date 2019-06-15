@@ -7,7 +7,7 @@ import org.junit.rules.ExpectedException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class CalculatorServiceImplTest {
+public class CalculatorServiceImplTests {
 
     private CalculatorServiceImpl calculatorServiceImpl;
     @Rule
