@@ -1,6 +1,7 @@
 package com.github.sashabogush.restcalculator.dto;
 
 public class RequestContainer {
+
     private double firstElement;
     private double secondElement;
 

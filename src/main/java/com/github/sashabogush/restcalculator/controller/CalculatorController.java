@@ -23,7 +23,7 @@ public class CalculatorController {
     }
 
     @RequestMapping(value = "/plus", method = RequestMethod.POST)
-    public ResponseEntity<ResponseContainer> plus(@RequestBody RequestContainer requestContainer){
+    public ResponseEntity<ResponseContainer> plus(@RequestBody RequestContainer requestContainer) {
         final double result = calculatorService.plus(
                 requestContainer.getFirstElement(),
                 requestContainer.getSecondElement());
@@ -31,4 +31,30 @@ public class CalculatorController {
         return new ResponseEntity<>(new ResponseContainer(result), HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/minus", method = RequestMethod.POST)
+    public ResponseEntity<ResponseContainer> minus(@RequestBody RequestContainer requestContainer) {
+        final double result = calculatorService.minus(
+                requestContainer.getFirstElement(),
+                requestContainer.getSecondElement());
+
+        return new ResponseEntity<>(new ResponseContainer(result), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/multiply", method = RequestMethod.POST)
+    public ResponseEntity<ResponseContainer> multiply(@RequestBody RequestContainer requestContainer) {
+        final double result = calculatorService.multiply(
+                requestContainer.getFirstElement(),
+                requestContainer.getSecondElement());
+
+        return new ResponseEntity<>(new ResponseContainer(result), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/divide", method = RequestMethod.POST)
+    public ResponseEntity<ResponseContainer> divide(@RequestBody RequestContainer requestContainer) {
+        final double result = calculatorService.divide(
+                requestContainer.getFirstElement(),
+                requestContainer.getSecondElement());
+
+        return new ResponseEntity<>(new ResponseContainer(result), HttpStatus.OK);
+    }
 }
